@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <MSBuildAllProjects>$(MSBuildAllProjects);$(MSBuildThisFileFullPath)</MSBuildAllProjects>
+    <HasSharedItems>true</HasSharedItems>
+    <SharedGUID>4107e409-dd87-4e70-bb07-aa4940374f16</SharedGUID>
+  </PropertyGroup>
+  <PropertyGroup Label="Configuration">
+    <Import_RootNamespace>IkaSimulator</Import_RootNamespace>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="$(MSBuildThisFileDirectory)Weapons\MainWeapons\MainWeapon.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Weapons\MainWeapons\Shooters\Shooter.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Weapons\MainWeapons\Shooters\WakabaShooter.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Weapons\SpecialWeapons\BombRush.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Weapons\SpecialWeapons\SpecialWeapon.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Weapons\SubWeapons\SplashBomb.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Weapons\SubWeapons\SubWeapon.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="$(MSBuildThisFileDirectory)Weapons\MainWeapons\Blasters\" />
+    <Folder Include="$(MSBuildThisFileDirectory)Weapons\MainWeapons\Brushes\" />
+    <Folder Include="$(MSBuildThisFileDirectory)Weapons\MainWeapons\Chargeres\" />
+    <Folder Include="$(MSBuildThisFileDirectory)Weapons\MainWeapons\Rollers\" />
+    <Folder Include="$(MSBuildThisFileDirectory)Weapons\MainWeapons\Slosheres\" />
+    <Folder Include="$(MSBuildThisFileDirectory)Weapons\MainWeapons\Spinners\" />
+  </ItemGroup>
+</Project>

@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="jp.santea.android.Fragments.WeaponsTabFragment"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <LinearLayout
+            android:id="@+id/container_main"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+            <android.support.design.widget.TabLayout
+                android:id="@+id/tab_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/theme500"
+                android:elevation="@dimen/elevation"
+                app:elevation="@dimen/elevation"
+                app:tabIndicatorColor="@color/accent100"
+                app:tabMinWidth="@dimen/tab_min_width"
+                app:tabMode="scrollable"
+                app:tabTextColor="@color/white_alpha_40"
+                app:tabGravity="fill"
+                tools:targetApi="lollipop" />
+
+          <android.support.v4.view.ViewPager
+            android:id="@+id/view_pager"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior" />
+          
+        </LinearLayout>
+    </FrameLayout>
+</RelativeLayout>
