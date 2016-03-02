@@ -34,6 +34,7 @@ namespace IkaSimulator.Droid.Fragments
             base.OnCreate(savedInstanceState);
 
             // Create your fragment here
+            // Test comment
         }
 
         public override View OnCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)
