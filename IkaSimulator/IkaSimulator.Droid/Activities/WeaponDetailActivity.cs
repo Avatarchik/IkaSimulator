@@ -17,6 +17,9 @@ using Android.Widget;
 using ServiceStack.Text;
 using IkaSimulator.Droid.Utils;
 using IkaSimulator.Weapons;
+using OxyPlot;
+using OxyPlot.Xamarin.Android;
+using OxyPlot.Series;
 
 namespace IkaSimulator.Droid.Activities
 {
@@ -38,6 +41,7 @@ namespace IkaSimulator.Droid.Activities
         private Android.Support.V7.Widget.Toolbar Toolbar { get; set; }
         private TextView TextViewMain { get; set; }
         private ImageView ImageViewMain { get; set; }
+		private PlotView PlotView { get; set;}
         private TextView TextViewSub { get; set; }
         private ImageView ImageViewSub { get; set; }
         private TextView TextViewSpecial { get; set; }
@@ -58,7 +62,7 @@ namespace IkaSimulator.Droid.Activities
 
             InitViews();
 
-            InitToolbar(null);
+            InitToolbar();
         }
 
         private void InitViews()
@@ -72,6 +76,12 @@ namespace IkaSimulator.Droid.Activities
             ImageViewMain = FindViewById<ImageView>(Resource.Id.image_view_main);
             ImageViewMain.SetImageResource(
                 ResourceConverter.GetDrawableID(this, this.MainWeapon.FileName));
+
+			PlotView = FindViewById<PlotView>(Resource.Id.plotView);
+			// TODO ﾖｱ､ｹ
+			var barSeries = new BarSeries();
+			PlotView.Model = new PlotModel();
+			PlotView.Model.Series.Add (barSeries);
 
             TextViewSub = FindViewById<TextView>(Resource.Id.text_view_sub);
             TextViewSub.Text = this.MainWeapon.SubWeapon.Name;
@@ -93,14 +103,13 @@ namespace IkaSimulator.Droid.Activities
             CollapsingToolbarLayout = FindViewById<CollapsingToolbarLayout>(Resource.Id.collapsing_toolbar);
         }
 
-        private void InitToolbar(MainWeapon weapon)
+        private void InitToolbar()
         {
             SetSupportActionBar(Toolbar);
             if (this.SupportActionBar != null)
                 this.SupportActionBar.SetDisplayHomeAsUpEnabled(true);
 
-            // TODO 変える
-            CollapsingToolbarLayout.Title = "わかばシューター";
+			CollapsingToolbarLayout.Title = this.MainWeapon.Name;
             Typeface typeFace = Typeface.CreateFromAsset(this.Assets, "ikamodoki1_0.ttf");
             CollapsingToolbarLayout.CollapsedTitleTypeface = typeFace;
             CollapsingToolbarLayout.ExpandedTitleTypeface = typeFace;
